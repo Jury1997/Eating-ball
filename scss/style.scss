@@ -1,0 +1,90 @@
+$bg: #3a4352;
+$circle: #ffee57;
+$sm-circle: #fff;
+
+@import "_normalize.scss";
+
+
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+.container{
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 60%;
+}
+
+
+.small-circle-0{
+  display: flex;
+  align-items: center;
+  animation: small 5s linear infinite;
+  &__el{
+    width: 2em;
+    height: 2em;
+    margin-right: 7em;
+    background-color: $sm-circle;
+    border-radius: 50%;
+  }
+}
+
+
+.small-circle-1{
+  display: flex;
+  align-items: center;
+  animation: small 5s linear infinite;
+  &__el{
+    width: 2em;
+    height: 2em;
+    margin-right: 7em;
+    background-color: $sm-circle;
+    border-radius: 50%;
+  }
+}
+
+
+@keyframes small {
+
+  0%{
+    transform: translateX(0);
+  }
+
+  100%{
+    transform: translateX(-50%);
+  }
+
+}
+
+
+.circle{
+  width: 10em;
+  height: 10em;
+  background-color: $circle;
+  border-radius: 50%;
+  z-index: 99;
+  position: absolute;
+  animation: circle 1s ease-in-out alternate infinite;
+}
+
+
+@keyframes circle {
+
+  0%{
+    clip-path: polygon(100% 0%, 50% 50%, 100% 100%, 0% 100%, 0% 0%, 25% 0%);
+  }
+
+  50%{
+    clip-path: polygon(1000% 0%, 100% 50%, 1000% 100%, 0% 100%, 0% 0%, 25% 0%);
+  }
+
+  100%{
+    clip-path: polygon(100% 0%, 50% 50%, 100% 100%, 0% 100%, 0% 0%, 25% 0%);
+  }
+
+}
